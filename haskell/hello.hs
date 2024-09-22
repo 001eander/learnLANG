@@ -35,3 +35,6 @@ quickSort (x : xs) =
   let smallerSorted = quickSort [s | s <- xs, s <= x]
       biggerSorted = quickSort [b | b <- xs, x < b]
    in smallerSorted ++ [x] ++ biggerSorted
+
+map' func [] = []
+map' func (x:xs) = (func x : (map' func xs) 
