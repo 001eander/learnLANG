@@ -36,5 +36,19 @@ quickSort (x : xs) =
       biggerSorted = quickSort [b | b <- xs, x < b]
    in smallerSorted ++ [x] ++ biggerSorted
 
-map' func [] = []
-map' func (x:xs) = (func x : (map' func xs) 
+chain :: Integral a => a -> [a]
+chain 1 = [1]
+chain n
+  | even n = n : chain (div n 2)
+  | odd n  = n : chain (n * 3 + 1)
+
+countChain :: Int
+countChain = length [n | n <- [1..100], length (chain n) > 15]
+
+enum :: [Integer -> Integer]
+enum = map (*) [1..]
+
+map' :: [t -> a] -> [t] -> [a]
+map' _ [] = []
+map' [] _ = []
+map' (p:ps) (x:xs) = p x : map' ps xs

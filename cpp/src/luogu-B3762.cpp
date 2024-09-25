@@ -1,20 +1,15 @@
 #include <iostream>
 
-long long det(long long a, long long b, long long c, long long d);
+typedef long long ll;
 
-int main()
-{
-    long long a, b, c, d;
-    std::cin >> a >> b >> c >> d;
+ll det(ll a, ll b, ll c, ll d);
 
-    long long ans = det(a, b, c, d);
-
-    std::cout << ans << std::endl;
-
-    return 0;
+int main() {
+  ll a, b, c, d;
+  std::cin >> a >> b >> c >> d;
+  ll ans = det(a, b, c, d);
+  std::cout << ans << std::endl;
+  return 0;
 }
 
-long long det(long long a, long long b, long long c, long long d)
-{
-    return a * d - b * c;
-}
+ll det(ll a, ll b, ll c, ll d) { return a * d - b * c; }
