@@ -1,8 +1,9 @@
-#include <algorithm>
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
+
+using namespace std;
 
 int main() {
-  std::cout << "Hello World!" << std::endl;
+  int x = 1;
+  cout << x << endl;
   return 0;
 }
